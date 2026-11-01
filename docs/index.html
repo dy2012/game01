@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日合合 MergeDaily — 全球同题的每日 2048 挑战</title>
+<meta name="description" content="每天一道 2048，全世界玩家同一道题。一天一局、比分数、连胜打卡、分享战绩。">
+<style>
+  :root { --bg:#FAF8EF; --board:#BBADA0; --text:#776E65; --accent:#ED7762; --gold:#EDC22E; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif; line-height:1.7; }
+  .wrap { max-width:860px; margin:0 auto; padding:40px 24px 64px; }
+  header { text-align:center; padding:24px 0 8px; }
+  .icon { width:152px; height:152px; border-radius:34px; box-shadow:0 18px 44px rgba(119,110,101,.28); }
+  h1 { font-size:44px; letter-spacing:2px; margin-top:22px; color:var(--text); }
+  .en-title { font-size:19px; font-weight:600; color:var(--accent); letter-spacing:4px; text-transform:uppercase; }
+  .slogan { font-size:20px; margin:10px 0 2px; }
+  .slogan-en { font-size:15px; opacity:.75; }
+  .pill { display:inline-block; margin-top:14px; padding:6px 18px; border-radius:999px; background:var(--board); color:#fff; font-size:14px; font-weight:600; }
+  .board-demo { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; max-width:340px; margin:36px auto; background:var(--board); padding:10px; border-radius:14px; }
+  .cell { aspect-ratio:1; background:#CDC1B4; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:clamp(18px,5vw,30px); }
+  .c2 { background:#EEE4DA; } .c4 { background:#EDE0C8; } .c8 { background:#F2B179; color:#fff; } .c16 { background:#F59563; color:#fff; }
+  .c32 { background:#F67C5F; color:#fff; } .c64 { background:#F65E3B; color:#fff; } .c128 { background:#EDCF72; color:#fff; }
+  .c256 { background:#EDCC61; color:#fff; } .c512 { background:#EDC850; color:#fff; } .c2048 { background:var(--gold); color:#fff; }
+  h2 { font-size:26px; margin:48px 0 18px; text-align:center; }
+  .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:8px; }
+  .card { background:#fff; border-radius:16px; padding:22px 20px; box-shadow:0 4px 18px rgba(119,110,101,.10); }
+  .card .emoji { font-size:30px; }
+  .card h3 { font-size:17px; margin:8px 0 6px; }
+  .card p { font-size:14px; opacity:.85; }
+  .how { background:#fff; border-radius:16px; padding:26px 28px; box-shadow:0 4px 18px rgba(119,110,101,.10); }
+  .how li { margin:8px 0 8px 20px; font-size:15px; }
+  footer { text-align:center; margin-top:56px; font-size:13px; opacity:.7; }
+  footer a { color:var(--accent); text-decoration:none; }
+  .btn { display:inline-block; margin-top:26px; padding:14px 40px; border-radius:14px; background:var(--accent); color:#fff; font-size:18px; font-weight:700; text-decoration:none; box-shadow:0 10px 24px rgba(237,119,98,.35); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img class="icon" src="icon.png" alt="每日合合 App 图标">
+    <h1>每日合合</h1>
+    <div class="en-title">MergeDaily</div>
+    <p class="slogan">每天一道 2048，全世界玩家同一道题。</p>
+    <p class="slogan-en">One 2048 puzzle a day — the same board for everyone worldwide.</p>
+    <span class="pill">iOS · 免费 · 无需注册</span>
+  </header>
+
+  <div class="board-demo" aria-hidden="true">
+    <div class="cell c2">2</div><div class="cell c4">4</div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell c2">2</div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell c8">8</div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell c2048">2048</div>
+  </div>
+
+  <h2>为什么是「每日合合」？ / Why MergeDaily?</h2>
+  <div class="features">
+    <div class="card"><div class="emoji">🌍</div><h3>全球同题</h3><p>初始盘面和每个新方块都由当天日期决定，无论你在哪个时区，今天的题和全世界玩家一模一样。</p></div>
+    <div class="card"><div class="emoji">🎯</div><h3>一天一局</h3><p>每一步都算数，结算即定局。断点续玩——退出后进度自动保存，随时回来继续。</p></div>
+    <div class="card"><div class="emoji">🔥</div><h3>连胜打卡</h3><p>连续完成每日挑战，保住你的火焰连胜纪录。今天，打卡了吗？</p></div>
+    <div class="card"><div class="emoji">🏆</div><h3>战绩分享</h3><p>一键生成战绩卡，晒出你的分数和终局盘面，和好友一决高下。</p></div>
+    <div class="card"><div class="emoji">♾️</div><h3>自由练习</h3><p>随机棋盘无限畅玩，成绩单独统计。练手感、冲高分，随时开一局。</p></div>
+    <div class="card"><div class="emoji">🔔</div><h3>治愈反馈</h3><p>轻快的"叮"声、轻微的触感反馈、顺滑的滑动与合并动画——舒服到停不下来。</p></div>
+  </div>
+
+  <h2>怎么玩 / How to Play</h2>
+  <div class="how">
+    <ul>
+      <li>滑动屏幕，所有方块一起移动</li>
+      <li>相同数字相撞即合并翻倍：2+2=4，4+4=8……</li>
+      <li>一路合出 <strong>2048</strong>！合成后可继续冲击更高分</li>
+      <li>每日挑战每天 UTC 00:00（北京时间 08:00）刷新</li>
+      <li>Swipe to move all tiles; same numbers merge. Reach 2048 — and beyond.</li>
+    </ul>
+  </div>
+
+  <div style="text-align:center">
+    <a class="btn" href="#" id="appstore-link">App Store 下载即将上线</a>
+  </div>
+
+  <footer>
+    <p><a href="support.html">支持 / Support</a> · <a href="privacy.html">隐私政策 / Privacy Policy</a></p>
+    <p>© 2026 MergeDaily · 每日合合</p>
+  </footer>
+</div>
+<script>
+  // App Store 上线后把这里的 # 替换为真实链接
+  // document.getElementById('appstore-link').href = 'https://apps.apple.com/app/...'
+</script>
+</body>
+</html>
